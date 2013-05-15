@@ -2,7 +2,6 @@
 set -e
 
 echo $SSH_KEY > ssh_key
-ssh-keygen -R github.com
 
 # This script is meant to be run automatically
 # as part of the jekyll-hook application.
@@ -14,7 +13,6 @@ owner=$3
 giturl=$4
 source=$5
 build=$6
-export GIT_SSH=$(echo $(pwd))/scripts/git-ssh.sh
 
 if [ -d $source ]; then
   echo "cleaning up..."
