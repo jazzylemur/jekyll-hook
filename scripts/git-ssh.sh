@@ -1,1 +1,1 @@
-ssh -i $(echo $(pwd))/ssh_key $2 $3
+ssh -i $(echo $(pwd))/ssh_key "$@"
