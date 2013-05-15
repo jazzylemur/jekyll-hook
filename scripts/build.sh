@@ -2,6 +2,7 @@
 set -e
 
 echo $SSH_KEY > ssh_key
+ssh-keygen -R github.com
 
 # This script is meant to be run automatically
 # as part of the jekyll-hook application.
