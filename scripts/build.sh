@@ -16,7 +16,7 @@ build=$6
 
 # Check to see if repo exists. If not, git clone it
 if [ ! -d $source ]; then
-    ssh -i $pwd/ssh_key git clone $giturl $source
+    ssh -i $(pwd)/ssh_key git clone $giturl $source
 fi
 exit
 # Git checkout appropriate branch, pull latest code
