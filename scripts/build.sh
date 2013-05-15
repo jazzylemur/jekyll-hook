@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo $SSH_KEY > ssh_key
+
 # This script is meant to be run automatically
 # as part of the jekyll-hook application.
 # https://github.com/developmentseed/jekyll-hook
@@ -14,9 +16,9 @@ build=$6
 
 # Check to see if repo exists. If not, git clone it
 if [ ! -d $source ]; then
-    git clone $giturl $source
+    ssh -i $pwd/ssh_key git clone $giturl $source
 fi
-
+exit
 # Git checkout appropriate branch, pull latest code
 cd $source
 git checkout $branch
