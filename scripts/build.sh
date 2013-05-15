@@ -18,7 +18,7 @@ build=$6
 if [ ! -d $source ]; then
     ssh -i $(echo $(pwd))/ssh_key git clone $giturl $source
 fi
-exit
+
 # Git checkout appropriate branch, pull latest code
 cd $source
 git checkout $branch
