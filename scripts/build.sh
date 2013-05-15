@@ -13,7 +13,7 @@ owner=$3
 giturl=$4
 source=$5
 build=$6
-export GIT_SSH=$(echo $(pwd))/git-ssh.sh
+export GIT_SSH=$(echo $(pwd))/scripts/git-ssh.sh
 
 if [ -d $source ]; then
   echo "cleaning up..."
