@@ -20,7 +20,10 @@ if [ -d $source ]; then
 fi 
 
 echo "cloning into $giturl"
-ssh -i $(echo $(pwd))/ssh_key git clone $giturl $source
+function ssh_wrapper {
+  ssh -i $(echo $(pwd))/ssh_key $1 $2
+}
+GIT_SSH=ssh_wrapper git clone $giturl $source
 
 # Git checkout appropriate branch, pull latest code
 cd $source
